@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>Score Card</title>
+		<meta charset="UTF-8">
+		<style>
+		.container{
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 600px;
+			left: 400px;
+			position: relative;
+			margin-top: 100px;
+		}
+		.QHead{
+			background-color: #d3d3d3;
+			padding: 1px;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		table{
+			padding-left: 10px;
+		}
+		.button{
+			background-color: #FFFFFF;
+			border: 1px black solid;
+			border-radius: 10px;
+			padding: 5px 30px;
+		}
+		table{
+			margin-top: 10px;
+		}
+		td{
+			/*padding: 30px 5px 5px 5px; */
+		}		
+		</style>
+		
+		<script type="text/javascript">
+		function finish(){
+			alert("Thank you for taking the test.")
+			window.close();
+		}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+		<div class="QHead">
+			<p style="text-align: center">Score Card</p>
+		</div>
+
+		<div onclick="scorecard()" style="padding-left: 20px; border: solid 1px; margin: 20px">
+		<details open>
+				<summary>Quantitative Section</summary>
+				<p><b>Number of Questions Answered: 2<br>
+				Number of Correct Answered: <span id="s1"></span><br>
+				Score: <span id="s2"></span><br></b></p>
+		</details>
+		<details>
+				<summary>Reading Section</summary>
+				<p><b>Number of Questions Answered: 1<br>
+				Number of Correct Answered: <span id="s3"></span><br>
+				Score: <span id="s4"></span><br></b></p>
+		</details>
+		<details>
+				<summary>Audio/Video Section</summary>
+		 		<p><b>Number of Questions Answered: 1<br>
+				Number of Correct Answered: <span id="s5"></span><br>
+				Score: <span id="s6"></span><br></b></p>
+		</details> <br>
+		</div>
+
+		<script>
+				var finalUrl = window.location.href;
+				var points = (finalUrl.substring(finalUrl.indexOf("=") + 1));
+				var score = points.split(",");
+
+				function scorecard(){
+				document.getElementById("s1").innerHTML = score[0];
+				if(score[0] == 2){
+					document.getElementById("s2").innerHTML = 100;
+				}else if(score[0] == 1){
+					document.getElementById("s2").innerHTML = 50;
+				}else{
+					document.getElementById("s2").innerHTML = 0;
+				}
+
+				document.getElementById("s3").innerHTML = score[1];
+				if(score[1] == 1){
+					document.getElementById("s4").innerHTML = 100;
+				}else{
+					document.getElementById("s4").innerHTML = 0;
+				}
+
+				document.getElementById("s5").innerHTML = score[2];
+				if(score[2] == 1){
+					document.getElementById("s6").innerHTML = 100;
+				}else{
+					document.getElementById("s6").innerHTML = 0;
+				}
+				
+			}
+		</script>
+
+			<div align="center" style="margin: 20px">
+				<h2>Thank You!!</h2>
+				<input class="button" type="submit" name="submit" value="Finish" onclick="finish();"/>
+			</div>
+
+
+		</div>
+	
+	</body>
+</html>

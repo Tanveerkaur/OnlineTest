@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<title>Question 1</title>
+		<meta charset="UTF-8">
+		<style>
+		.container{
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 1000px;
+			left: 400px;
+			position: relative;
+			margin-top: 100px;
+		}
+		.QHead{
+			background-color: #d3d3d3;
+			padding: 1px;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		.QDetails{
+			padding-left: 10px;
+		}
+		table{
+			padding-left: 10px;
+		}
+		.button{
+			background-color: #FFFFFF;
+			border: 1px black solid;
+			border-radius: 10px;
+			padding: 10px;
+		}
+		td{
+			padding: 30px 10px 10px 10px; 
+		}		
+		</style>
+		<script type="text/javascript">
+            var choice1;
+			var choice2;
+			function blank1(){
+				choice1 =document.querySelector('input[name="radioA"]:checked').value;
+				if(choice1=="$650"){
+					document.getElementById("mark1").innerHTML=choice1;
+				}
+					document.getElementById("mark1").innerHTML=choice1;
+					document.getElementById("radiobutton2").style.display="block";
+				}
+			function blank2(){
+				choice2=document.querySelector('input[name="radioB"]:checked').value;
+				if(choice2=="Twitter"){
+					document.getElementById("mark2").innerHTML=choice2;
+				}
+					document.getElementById("mark2").innerHTML=choice2;
+			}
+
+			function checkAns(){
+				var loc = window.location.href;
+				var points = parseInt(loc.substring(loc.indexOf("=") + 1));
+
+				console.log(points);
+
+				if(choice1=="$650" && choice2=="Twitter"){
+					window.location.href = "question4.html?points="+points+","+1;
+					}else{
+			   		window.location.href = "question4.html?points="+points+","+0;
+				}
+			}
+			function clearSelection(){
+            	document.getElementById("optionA").checked = false;
+        		document.getElementById("optionB").checked = false;
+        		document.getElementById("optionC").checked = false;
+        		document.getElementById("optionD").checked = false;
+        		document.getElementById("optionE").checked = false;
+        		document.getElementById("optionF").checked = false;
+            }
+         </script>
+	</head>
+	<body>
+		<div class="container">
+		<div class="QHead">
+			<p style="text-align: center">Question 3</p>
+		</div>
+			<table border="0">
+				<tr>
+					<td colspan="3">As per the latest twitter news, complete the article snippet given by selecting appropriate choices for the blank .</td>
+					<td rowspan="4" style="left-padding: 20px">
+						"Twitter wants more cash. The company announced two <br> <span id="mark1" style="background-color: yellow">$______</span> million debt offerings in a filing today. each with a <br> potential $100 increase provided that the sales are <br> oversubscribed. Assuming full tip. including the $100 million <br> boosters <span id="mark2" style="background-color: yellow">________</span> will raise up to $1.5 billion with the two <br> offerings <br><br><br> Source: Source: httplitechcrunch.com/2014/09/104witter-to-raise-up-to-1 -5b-in-debt-offering
+					</td>
+				</tr>
+		  		<tr>
+				    <td>
+				    	<input type="radio" id="optionA" value="$650" name="radioA" onclick= "blank1()"><span>Option 1 Mark 1:$650</span>
+					</td>
+					<td>
+						<input type="radio" id="optionB" value="Twitter" name="radioB" onclick= "blank2()"><span> Option 1 Mark 2:Twitter</span>
+				    </td>
+				</tr>
+				<tr>
+				    <td>
+				    	<input type="radio" id="optionC" value="$550" name="radioA" onclick= "blank1()"><span> Option 2 Mark 1:$550</span> 
+				    </td>
+				    <td>
+				    	<input type="radio" id="optionD" value="Google" name="radioB" onclick= "blank2()"><span>Option 2 Mark 2:Google</span>
+				    </td>
+				</tr>
+				<tr>
+				    <td>
+				    	<input type="radio" id="optionE" value="$650" name="radioA" onclick= "blank1()"><span> Option 3 Mark 1:$650</span>
+				    </td>
+				    <td>
+				    	<input type="radio" id="optionF" value="Facebook" name="radioB" onclick= "blank2()"><span> Option 3 Mark 2:Facebook</span>
+				    </td>
+				</tr>
+			  	<tr>
+			  		<td><input class="button" type="submit" name="submit" value="Submit & Next Question" onclick="checkAns();"></td>
+			  		<td><input class="button" type="submit" name="submit" value="Cancel & Clear Selection" onclick="clearSelection();"></td>
+			  	</tr>
+			</table>
+	</div>
+	
+	</body>
+</html>

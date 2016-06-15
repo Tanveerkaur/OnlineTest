@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>Survey</title>
+		<meta charset="UTF-8">
+		<style>
+		.container{
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 600px;
+			left: 400px;
+			position: relative;
+			margin-top: 100px;
+		}
+		.QHead{
+			background-color: #d3d3d3;
+			padding: 1px;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		table{
+			padding-left: 10px;
+		}
+		.button{
+			background-color: #FFFFFF;
+			border: 1px black solid;
+			border-radius: 10px;
+			padding: 10px;
+		}
+		textarea{
+    		overflow-y:scroll;
+		}
+		td{
+			/*padding: 30px 5px 5px 5px; */
+		}			
+		</style>
+		<script type="text/javascript">
+            function getScore(){
+            	var loc = window.location.href;
+				var points = loc.substring(loc.indexOf("=")+1);
+				window.location.assign("scorecard.html?points="+points);
+            }
+            function clearSelection(){
+            	document.getElementById("textsurvey").checked = false;
+        		document.getElementById("cityList").checked = false;
+        		document.getElementById("roomNo").checked = false;
+            }
+         </script>
+	</head>
+	<body>
+		<div class="container">
+		<div class="QHead">
+			<p style="text-align: center">Survey</p>
+		</div>
+
+			<table border="0">
+				<tr>
+					<td colspan="3">How did you like the center?</td>
+				</tr>
+	
+				<tr>
+					<td>Comments</td>
+				    <td colspan="3"><textarea name="textarea" cols="50" rows="5"></textarea></td>
+				 </tr>   	
+						
+				<tr>
+					<td>Select Test Area Location: </td>
+			  	</tr>
+
+			  	<tr>
+			  		<br>
+			  		<td>City: <br>
+			  			<select size="4">
+							<option id="SanJose" value="San Jose">San Jose</option>
+							<option id="SanFrancisco" value="San Francisco">San	Francisco</option>
+							<option id="PaloAlto" value="Palo Alto">Palo Alto</option>
+							<option id="MountainView" value="Mountain View">Mountain View</option>
+							<option id="Sunnyvale" value="Sunnyvale">Sunnyvale</option>
+							<option id="Milpitas" value="Milpitas">Milpitas</option>
+						</select>
+					</td>
+					<td>Room Number#: <br>
+						<select size="4">
+							<option value="Room 337">Room 337</option>
+							<option value="Room 210">Room 210</option>
+							<option value="Room 110">Room 110</option>
+							<option value="Room 410">Room 410</option>
+							<option value="Room 301">Room 301</option>
+							<option value="Room 189">Room 189</option>
+						</select>
+					</td>
+			  	</tr>
+
+			  	<tr>
+			  		<td><input class="button" type="submit" name="submit" value="Submit & Get Score" onclick="getScore();"></td>
+			  		<td><input class="button" type="submit" name="submit" value="Skip & Get Score" onclick="getScore();"></td>
+			  	</tr>
+			</table>
+	</div>
+	
+	</body>
+</html>

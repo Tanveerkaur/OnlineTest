@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Log In</title>
+		<meta charset="UTF-8">
+		<script></script>
+		<style>
+		.container{
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 350px;
+			left: 650px;
+			position: relative;
+			margin-top: 300px;
+		}
+		.login{
+			background-color: #d3d3d3;
+			padding: 1px;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		.formsection{
+			padding: 20px 30px;
+		}
+		.button{
+			background-color: #FFFFFF;
+			border: 1px black solid;
+			border-radius: 15px;
+			padding: 1px 20px;
+		}
+		.bottom{
+
+			padding: 0px 20px 20px 30px;
+		}
+		</style>
+		<script type="text/javascript">
+            function validate_info(){
+            	var username = document.getElementById("username").value;
+            	var password = document.getElementById("password").value;
+            	if (username=="user123" && password=="user123"){
+            		return true;
+            	} else{
+            		return false;
+            	}
+            }
+
+         </script>
+	</head>
+	<body>
+	<div class="container">
+		<div class="login">
+			<p style="text-align: center">User Login</p>
+		</div>
+
+		<div class="formsection"</div>
+		<form onsubmit="return validate_info()" action="question1.html">
+			<p>Username: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="username" required></p>
+			<p>Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" id="password" required></p>
+
+			<a href="" style="text-decoration: none">Create Account/Forgot?</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input class="button" type="submit" value="Login" name="commit">
+		</form>
+		</div>
+
+	</div>
+	</body>
+</html>

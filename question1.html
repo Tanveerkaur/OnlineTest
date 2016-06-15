@@ -1,0 +1,251 @@
+<html>
+	<head>
+		<title>Question 1</title>
+		<meta charset="UTF-8">
+		<style>
+		.container{
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 950px;
+			left: 400px;
+			position: relative;
+			margin-top: 100px;
+		}
+		.QHead{
+			background-color: #d3d3d3;
+			padding: 1px;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		.QDetails{
+			padding-left: 10px;
+		}
+		table{
+			padding-left: 10px;
+		}
+		.button{
+			background-color: #FFFFFF;
+			border: 1px black solid;
+			border-radius: 10px;
+			padding: 10px;
+		}
+		td{
+			/*padding: 30px 5px 5px 5px; */
+		}		
+		</style>
+		<script type="text/javascript">
+            function checkAns(){
+				var optionA = document.getElementById("optionA");
+				var optionB = document.getElementById("optionB");
+				var optionC = document.getElementById("optionC");
+				var optionD = document.getElementById("optionD");
+
+				var answer1;
+				if (optionA.checked) {
+					answer1 = optionA.value;
+				}
+
+				else if (optionB.checked) {
+					answer1 = optionB.value;
+				}
+
+				else if (optionC.checked) {
+					answer1 = optionC.value;
+				}
+
+				else if (optionD.checked) {
+					answer1 = optionD.value;
+				}
+				
+				if (answer1 == "D") {
+					window.location.href = "question2.html?points=" + 1;
+				}else{
+					window.location.href = "question2.html?points=" + 0;
+
+				}
+			}
+            function clearSelection(){
+            	document.getElementById("optionA").checked = false;
+        		document.getElementById("optionB").checked = false;
+        		document.getElementById("optionC").checked = false;
+        		document.getElementById("optionD").checked = false;
+            }
+         </script>
+	</head>
+	<body>
+		<div class="container">
+		<div class="QHead">
+			<p style="text-align: center">Question 1</p>
+		</div>
+
+				<table border="0">
+				<tr>
+					<td colspan="3">Given points (x1,y1) and (x2,y2) select the formula to find the equation<br> of given line</td>
+				</tr>
+		  		<tr>
+				    <td>
+				    	<input type="radio" name="option" id="optionA" value="A" /> 
+				    	<math>
+						<mrow>
+						<mi>y </mi>
+						<mo> = </mo>
+						<mrow>
+						<mi>m </mi>
+						<mi>x </mi>
+						</mrow>
+						<mo>+ </mo>
+						<mn>b</mn>
+						</mrow>
+						</math>				    	
+					</td>
+					<td>
+						<input type="radio" name="option" id="optionB" value="B" />
+						<math>
+						<msup>
+						<mrow>
+						<mo>(</mo>
+						<mrow>
+						<mrow>
+						<mi>x</mi>
+						</mrow>
+						<mo>-</mo>
+						<mrow>
+						<mi>h</mi>
+						</mrow>
+						</mrow>
+						<mo>)</mo>
+						</mrow>
+						<mn><sup>2</sup></mn>
+						</msup>
+						<mo>+</mo>
+						<msup>
+						<mrow>
+						<mo>(</mo>
+						<mrow>
+						<mrow>
+						<mi>y</mi>
+						</mrow>
+						<mo>-</mo>
+						<mrow>
+						<mi>k</mi>
+						</mrow>
+						</mrow>
+						<mo>)</mo>
+						</mrow>
+						<mn><sup>2</sup></mn>
+						</msup>
+						<mo>=</mo>
+						<msup>
+						<mi>r</mi>
+						<mn><sup>2</sup></mn>
+						</msup>
+						</math>
+				    </td>
+				    <td rowspan="2">
+				    	<!-- <img src="./graph.jpg" alt=""> -->
+				    	<svg height="210" width="450">
+							<line x1="200" y1="200" x2="200" y2="0"
+							      style="stroke:rgb(0,0,0);stroke-width:2"/>
+							<line x1="200" y1="200" x2="400" y2="200"
+							      style="stroke:rgb(0,0,0);stroke-width:2"/>
+							<line x1="200" y1="200" x2="400" y2="0"
+							      style="stroke:rgb(0,0,0);stroke-width:2"/>
+							<line x1="200" y1="0" x2="195" y2="10"
+							      style="stroke:rgb(0,0,0);stroke-width:2"/>
+							<line x1="200" y1="0" x2="205" y2="10"
+							      style="stroke:rgb(0,0,0);stroke-width:2"/>
+							<line x1="400" y1="200" x2="390" y2="195"
+							      style="stroke:rgb(0,0,0);stroke-width:2"/>
+							<line x1="400" y1="200" x2="390" y2="205"
+							      style="stroke:rgb(0,0,0);stroke-width:2"/>
+							<circle cx="350" cy="50" r="4" fill="red "/>
+							<circle cx="250" cy="150" r="4" fill="red "/>
+							<text x="360" y="70" style="fill:black;">(x2,y2)
+							<tspan x="260" y="160">(x1,y1)</tspan>
+            				</text>
+						</svg>
+				    </td>
+				</tr>
+				<tr>
+				    <td>
+				    	<input type="radio" name="option" id="optionC" value="C" /> 
+						<math
+						xmlns="http://www.w3.org/1998/Math/MathML">
+						<mrow>
+						<mi>y </mi>
+						<mo> - </mo>
+						<msub>
+						<mi>y </mi>
+						<mn><sub>1</sub> </mn>
+						</msub>
+						<mo>=</mo>
+						<mrow>
+						<mi>m </mi>
+						<mo>(</mo>
+						<mi>x </mi>
+						<mo>-</mo>
+						<msub>
+						<mi>x </mi>
+						<mn><sub>1</sub> </mn>
+						</msub>
+						<mo>)</mo>
+						</mrow>
+						</mrow>
+						</math>
+				    </td>
+				    <td>
+				    	<input type="radio" name="option" id="optionD" value="D" /> 
+						<math xmlns="http://www.w3.org/1998/Math/MathML">
+						<mrow>
+						<mi>y </mi>
+						<mo> - </mo>
+						<msub>
+						<mi>y </mi>
+						<mn><sub>2</sub> </mn>
+						</msub>
+						<mo>=</mo>
+						<mfrac>
+						<mrow>
+						<mo>(</mo>
+						<msub> <mi>y</mi>
+						<mn><sub>2</sub></mn></msub>
+						<mo>-</mo>
+						<msub> <mi>y</mi>
+						<mn><sub>1</sub></mn></msub>
+						<mo>)</mo>
+						<mo>/</mo>
+						</mrow>
+						<mrow>
+						<mo>(</mo>
+						<msub> <mi>x</mi>
+						<mn><sub>2</sub></mn></msub>
+						<mo>-</mo>
+						<msub> <mi>x</mi>
+						<mn><sub>1</sub></mn></msub>
+						<mo>)</mo>
+						</mrow>
+						</mfrac>
+						<mrow>
+						<mo>(</mo>
+						<msub> <mi>x</mi>
+						<mn></mn></msub>
+						<mo>-</mo>
+						<msub> <mi>x</mi>
+						<mn><sub>2</sub></mn></msub>
+						<mo>)</mo>
+						</mrow>
+						</mfrac>
+						</mrow>
+						</math>
+				    </td>
+				</tr>
+
+			  	<tr>
+			  		<td><input class="button" type="submit" name="submit" value="Submit & Next Question" onclick="checkAns()"></td>
+			  		<td>&nbsp;&nbsp;&nbsp;&nbsp;<input class="button" type="submit" name="submit" value="Cancel & Clear Selection" onclick="clearSelection();"></td>
+			  	</tr>
+			</table>
+	</div>
+	
+	</body>
+</html>

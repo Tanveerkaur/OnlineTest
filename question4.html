@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<title>Question 4</title>
+		<meta charset="UTF-8">
+		<style>
+		.container{
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 860px;
+			left: 400px;
+			position: relative;
+			margin-top: 100px;
+		}
+		.QHead{
+			background-color: #d3d3d3;
+			padding: 1px;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		.QDetails{
+			padding-left: 10px;
+		}
+		table{
+			padding-left: 10px;
+		}
+		.button{
+			background-color: #FFFFFF;
+			border: 1px black solid;
+			border-radius: 10px;
+			padding: 10px;
+		}
+		td{
+			/*padding: 30px 5px 5px 5px; */
+		}			
+		</style>
+		<script type="text/javascript">
+            function checkAns(){
+            	var optionA = document.getElementById("optionA");
+				var optionB = document.getElementById("optionB");
+				var optionC = document.getElementById("optionC");
+				var optionD = document.getElementById("optionD");
+
+				var answer4;
+				if (optionA.checked) {
+					answer4 = optionA.value;
+				}
+
+				else if (optionB.checked) {
+					sessionStorage.setItem('points', 0);
+					answer4 = optionB.value;
+				}
+
+				else if (optionC.checked) {
+					sessionStorage.setItem('points', 0);
+					answer4 = optionC.value;
+				}
+
+				else if (optionD.checked) {
+					sessionStorage.setItem('points', 0);
+					answer4 = optionD.value;
+				}
+				var loc = window.location.href;
+				var points = loc.substring(loc.indexOf("=") + 1);
+
+				if (answer4 == "A") {
+					window.location.href = "survey.html?points=" + points + "," + 1;
+				}else{
+					window.location.href = "survey.html?points=" + points + "," + 0;
+				}
+
+            }
+            function clearSelection(){
+            	document.getElementById("optionA").checked = false;
+        		document.getElementById("optionB").checked = false;
+        		document.getElementById("optionC").checked = false;
+        		document.getElementById("optionD").checked = false;
+            }
+         </script>
+	</head>
+	<body>
+		<div class="container">
+		<div class="QHead">
+			<p style="text-align: center">Question 4</p>
+		</div>
+
+		<!-- <div class="QDetails">
+			<p>Given points (x1,y1) and (x2,y2) select the formula to find the equation<br> of given line</p>
+		</div> -->
+
+		<!-- <form action="" method="POST"> -->
+			<table border="0">
+				<tr>
+					<td colspan="3">Watch the video and answer the following question. <br>	What is the source as mentioned in the video?</td>
+				</tr>
+		  		<tr>
+				    <td>
+				    	<input type="radio" name="option" id="optionA" value="A" />
+						NASA.gov
+					</td>
+					<td>
+						<input type="radio" name="option" id="optionB" value="B" />
+						Data.gov
+				    </td>
+				    <td rowspan="2">
+				    	<iframe width="400" height="250" src="https://www.youtube.com/embed/ih9jPaZct1w" frameborder="1" allowfullscreen></iframe>
+				    </td>
+				</tr>
+				<tr>
+				    <td>
+				    	<input type="radio" name="option" id="optionC" value="C" />
+						Facebook
+				    </td>
+				    <td>
+				    	<input type="radio" name="option" id="optionD" value="D" />
+						XYZ.net
+				    </td>
+				</tr>
+
+			  	<tr>
+			  		<td><input class="button" type="submit" name="submit" value="Submit & Next Question" onclick="checkAns();"></td>
+			  		<td><input class="button" type="submit" name="submit" value="Cancel & Clear Selection" onclick="clearSelection();"></td>
+			  		<td><strong>Expedition 40 Undocks Ending Mission</strong> <br>Source: http://www.nasa.gov/multimedia/videogallary/index.html#.VBFB5S5dVOE</td>
+			  	</tr>
+			</table>
+		<!-- </form> -->
+	</div>
+	
+	</body>
+</html>

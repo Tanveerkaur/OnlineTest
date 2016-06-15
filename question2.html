@@ -1,0 +1,184 @@
+<html>
+	<head>
+		<title>Question 1</title>
+		<meta charset="UTF-8">
+		<style>
+		.container{
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 860px;
+			left: 400px;
+			position: relative;
+			margin-top: 100px;
+		}
+		.QHead{
+			background-color: #d3d3d3;
+			padding: 1px;
+			border-top-right-radius: 10px;
+			border-top-left-radius: 10px;
+		}
+		.QDetails{
+			padding-left: 10px;
+		}
+		table{
+			padding-left: 10px;
+		}
+		.button{
+			background-color: #FFFFFF;
+			border: 1px black solid;
+			border-radius: 10px;
+			padding: 10px;
+		}
+		td{
+			padding: 30px 5px 5px 5px; 
+		}			
+		</style>
+		<script type="text/javascript">
+            function checkAns(){
+            	var optionA = document.getElementById("optionA");
+				var optionB = document.getElementById("optionB");
+				var optionC = document.getElementById("optionC");
+				var optionD = document.getElementById("optionD");
+
+				var answer2;
+				if (optionA.checked) {
+					answer2 = optionA.value;
+				}
+
+				else if (optionB.checked) {
+					answer2 = optionB.value;
+				}
+
+				else if (optionC.checked) {
+					answer2 = optionC.value;
+				}
+
+				else if (optionD.checked) {
+					answer2 = optionD.value;
+				}
+
+				var loc = window.location.href;
+				var points = parseInt(loc.substring(loc.indexOf("=") + 1));
+
+				if (answer2 == "A") {
+					window.location.href = "question3.html?points="	+ (points + 1);
+
+				}else{ 
+					window.location.href = "question3.html?points=" + points;
+				}
+            }
+            function clearSelection(){
+            	document.getElementById("optionA").checked = false;
+        		document.getElementById("optionB").checked = false;
+        		document.getElementById("optionC").checked = false;
+        		document.getElementById("optionD").checked = false;
+            }
+         </script>
+	</head>
+	<body>
+		<div class="container">
+		<div class="QHead">
+			<p style="text-align: center">Question 2</p>
+		</div>
+
+		<!-- <id="myForm" action="" method="POST"> -->
+			<table border="0">
+				<tr>
+					<td colspan="3">Select the cosine theorem formula.</td>
+				</tr>
+		  		<tr>
+				    <td>
+				    	<input type="radio" name="option" id="optionA" value="A" /> 
+					    	<math>
+	         				<mi>cos</mi><mo> ( </mo><mo>&alpha; </mo><mo>&plusmn; </mo><mo>&beta; </mo><mo>) </mo>
+	          				<mo>=</mo>
+	          				<mi>cos</mi><mi>&alpha;</mi><mi>cos</mi><mi>&beta;</mi><mo>&mnplus;</mo>
+	          				<mi>sin</mi><mi>&alpha;</mi><mi>sin</mi><mi>&beta;</mi>
+	        				</math>
+					</td>
+					<td>
+						<input type="radio" name="option" id="optionB" value="B" />
+						<math>
+				          <mi>sin</mi><mo> ( </mo><mo>&alpha; </mo><mo>&plusmn; </mo><mo>&beta; </mo><mo>) </mo>
+				          <mo>=</mo>
+				          <mi>sin</mi>
+				          <mi>&alpha;</mi>
+				          <mi>cos</mi>
+				          <mi>&beta;</mi>
+				          <mo>&plusmn;</mo>
+				          <mi>cos</mi>
+				          <mi>&alpha;</mi>
+				          <mi>sin</mi>
+				          <mi>&beta;</mi>
+				        </math>
+				    </td>
+				</tr>
+				<tr>
+				    <td>
+				    	<input type="radio" name="option" id="optionC" value="C" /> 
+				    	<math>
+				    		<mi>sin</mi>
+					        <mi>&alpha;</mi>
+					        <mo>+</mo>
+					        <mi>sin</mi>
+					        <mi>&beta;</mi>
+					        <mo>=</mo>
+					        <mn>2</mn>
+					        <mi>sin</mi>
+					        <mo>(</mo>
+							<mfrac>
+	      					<mrow> <mo>(</mo> <mo>&alpha;</mo><mo>+</mo><mo>&beta;</mo> <mo>)</mo> </mrow>
+	      					<mo>/</mo>
+		  					<mn> 2</mn>
+							</mfrac>
+							<mo>)</mo>
+							<mi>cos </mi> 
+							<mo>(</mo>
+							<mfrac>
+							<mrow> <mo>(</mo> <mo>&alpha;</mo><mo>-</mo><mo>&beta;</mo> <mo>)</mo> </mrow>
+					      	<mo>/</mo>
+						  	<mn> 2</mn>
+					   		</mfrac>
+							<mo>)</mo>
+						</math>
+				    </td>
+				    <td>
+				    	<input type="radio" name="option" id="optionD" value="D" />
+				    	<math>
+				    		<mi>sin</mi>
+         					<mi>&alpha;</mi>
+							<mo>-</mo>
+							<mi>sin</mi>
+							<mi>&beta;</mi>
+							<mo>=</mo>
+							<mn>2</mn>
+							<mi>cos</mi>
+							<mo>(</mo>
+							<mfrac>
+							<mrow> <mo>(</mo> <mo>&alpha;</mo><mo>+</mo><mo>&beta;</mo> <mo>)</mo></mrow>
+							<mo>/</mo>
+							<mn> 2</mn>
+							</mfrac>
+							<mo>)</mo>
+							<mi>sin </mi> 
+							<mo>(</mo>
+							<mfrac>
+							<mrow> <mo>(</mo> <mo>&alpha;</mo><mo>-</mo><mo>&beta;</mo> <mo>)</mo></mrow>
+							<mo>/</mo>
+							<mn> 2</mn>
+							</mfrac>
+							<mo>)</mo>
+				    	</math>
+				    </td>
+				</tr>
+
+			  	<tr>
+			  		<td><input class="button" type="submit" name="submit" value="Submit & Next Question" onclick="checkAns();"></td>
+			  		<td>&nbsp;&nbsp;&nbsp;&nbsp;<input class="button" type="submit" name="submit" value="Cancel & Clear Selection" onclick="clearSelection();"></td>
+			  	</tr>
+			</table>
+		<!-- </form> -->
+	</div>
+	
+	</body>
+</html>
